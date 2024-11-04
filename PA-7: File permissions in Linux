@@ -1,0 +1,31 @@
+
+Project description
+    Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
+
+Check file and directory details
+      In the /home/researcher2/projects directory type ls -la
+
+Describe the permissions string
+    ls - la displays permissions to files and directories, including hidden files. It also shows ownership, date/time stamp of the most recent change to directories/files
+    In Linux, permissions are represented with a 10-character string. Permissions include:
+      ●	read: for files, this is the ability to read the file contents; for directories, this is the ability to read all contents in the directory including both files and subdirectories
+      ●	write: for files, this is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory
+      ●	execute: for files, this is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files
+    These permissions are given to these types of owners:
+      ●	user: the owner of the file
+      ●	group: a larger group that the owner is a part of
+      ●	other: all other users on the system
+
+Change file permissions
+    chmod changes permissions on files and directories
+    The organization does not allow others to have write access to any files. Based on the permissions policy established, the file project_k.txt was identified to have write access for the others user type. A chmod command was utilized to remove write access.
+
+Change file permissions on a hidden file
+    The organization has archived .project_x.txt, which is why it’s a hidden file. Per policy this file should not have write permissions for anyone, but the user and group should be able to read the file. Existing permissions show the user to have read/write,and group to have write permissions, respectively. Hence a chmod command was used to update both user permissions to read only with the exact method (=)
+
+Change directory permissions
+    Per organizational policy only researcher2 should be allowed to access the drafts directory and its contents. Existing permissions show the group user type has executable access. Hence a chmod command was used to remove x from the drafts directory
+
+Summary
+    I changed multiple permissions to match the level of authorization my organization wanted for files and directories in the projects directory. The first step in this was using ls -la to check the permissions for the directory. This informed my decisions in the following steps. I then used the chmod command multiple times to change the permissions on files and directories.
+
